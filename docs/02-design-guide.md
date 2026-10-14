@@ -114,6 +114,7 @@
 ## 3. 타이포그래피
 
 - **글꼴**: Pretendard (SIL Open Font License). `woff2` 파일을 `src/assets/fonts/`에 넣고 `@font-face`로 불러옵니다. README에 라이선스를 기재합니다.
+  - 사용 파일: KS X 1001 서브셋(`Pretendard-*.subset.woff2`) 400·500·600·700, 각 약 268KB. 자주 쓰는 한글 2,350자와 영문·숫자·기호를 담고 있으며, 서브셋에 없는 글자는 대체 글꼴로 표시됩니다.
 - **대체 글꼴**: `system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif`
 - 단위는 `rem`을 씁니다. 사용자의 브라우저 글꼴 크기 설정을 따르기 위해서입니다.
 
@@ -147,6 +148,17 @@
 **모서리**: `--radius-sm` 8px (배지, 입력) · `--radius-md` 16px (카드, 이미지) · `--radius-full` 999px (버튼)
 
 **그림자**: 쓰지 않는 것이 기본입니다. 카드는 `1px solid` 테두리나 `--color-surface`와 `--color-bg`의 차이로 구분합니다.
+
+**레이아웃·움직임 토큰** (값은 5장, 7장 기준)
+
+| 토큰 | 값 | 비고 |
+|---|---|---|
+| `--gutter` | 20px → 32px (48em) → 40px (64em) | 컨테이너 좌우 여백 |
+| `--container-max` | `72rem` | 컨테이너 최대 폭 |
+| `--header-height` | 64px | sticky 헤더 높이, `scroll-padding-top` |
+| `--measure` | `68ch` | 본문 한 줄 최대 길이 |
+| `--duration` | 180ms | 전환 시간 |
+| `--easing` | `ease-out` | 전환 곡선 |
 
 ## 5. 반응형 레이아웃
 
