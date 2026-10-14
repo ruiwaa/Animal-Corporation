@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "package": "vite build && sh scripts/package.sh"
+    "package": "vite build && sh scripts/package.sh",
+    "package:run": "vite build && sh scripts/package.sh --run-only"
   },
   "devDependencies": {
     "vite": "^8.3.4",
