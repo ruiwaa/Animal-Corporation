@@ -1,0 +1,88 @@
+/* 입양 절차 */
+
+.process {
+  --step-size: 48px;
+  --step-line-gap: var(--space-2);
+
+  background-color: var(--color-surface-soft);
+}
+
+/* 모바일·태블릿: 세로 스텝 (번호 원 + 세로선) */
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--step-size) 1fr;
+  column-gap: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+/* 다음 단계 번호 원까지 잇는 선 (장식) */
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--step-size) + var(--step-line-gap));
+  bottom: var(--step-line-gap);
+  left: calc(var(--step-size) / 2 - 1px);
+  width: 2px;
+  background-color: var(--color-primary);
+}
+
+/* 번호는 <ol>이 순서를 전달하므로 스크린 리더에서는 숨긴다 */
+.step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--step-size);
+  height: var(--step-size);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.step__content {
+  padding-top: var(--space-2);
+}
+
+.step__desc {
+  margin-top: var(--space-2);
+  color: var(--color-text-sub);
+}
+
+/* 데스크톱: 가로 5단계 (번호 원 + 가로 연결선) */
+@media (min-width: 64em) {
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: var(--space-6);
+  }
+
+  /* 설명 길이가 달라 칸 높이가 늘어나도 번호·제목 행이 늘어나지 않게 위로 붙인다 */
+  .step {
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: center;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  /* 다음 칸의 번호 원 중심은 100% + 칸 간격 + 50% 지점에 있다 */
+  .step:not(:last-child)::after {
+    top: calc(var(--step-size) / 2 - 1px);
+    bottom: auto;
+    left: calc(50% + var(--step-size) / 2 + var(--step-line-gap));
+    right: calc(-50% - var(--space-6) + var(--step-size) / 2 + var(--step-line-gap));
+    width: auto;
+    height: 2px;
+  }
+
+  .step__content {
+    padding-top: var(--space-4);
+  }
+}
