@@ -53,7 +53,7 @@ Vite 기본 빌드 결과에는 두 가지 문제가 있습니다.
 **제출 시 주의**
 
 - 채점자가 여는 `index.html`은 **빌드 결과물**이어야 합니다. 소스 `index.html`은 file://에서 JS가 막힙니다.
-- 제출 폴더 구성안: 루트에 `dist/` 내용(빌드된 `index.html`과 이미지), `source/`에 프로젝트 소스. 최종 구성은 이슈 #14에서 확정합니다.
+- 제출 폴더 구성 (이슈 #14에서 확정): 루트에 `dist/` 내용(빌드된 `index.html`, 이미지, 폰트), `README.md`, `source/`에 프로젝트 소스. `npm run package`가 `submission/animal-center.zip`을 만듭니다 (`scripts/package.sh`).
 
 ## 2. 실행 테스트 매트릭스
 
