@@ -1,0 +1,19 @@
+/* 제공 서비스 */
+
+.services {
+  background-color: var(--color-bg);
+}
+
+/* bg 위의 흰 카드는 배경 차이가 작아 테두리로 경계를 보탠다 */
+.service {
+  border: 1px solid var(--color-surface-soft);
+}
+
+.service__title {
+  margin-top: var(--space-4);
+}
+
+.service__desc {
+  margin-top: var(--space-2);
+  color: var(--color-text-sub);
+}
