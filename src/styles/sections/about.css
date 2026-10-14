@@ -19,9 +19,10 @@
 }
 
 /* 숫자 2×2. 읽는 순서는 항목명 → 숫자(dt → dd), 화면에서는 숫자를 위에 둔다 */
+/* minmax(0, 1fr): 숫자 카드의 최소 폭이 칸을 밀어내 320px(200% 확대)에서 가로로 넘치지 않게 한다 */
 .stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
 }
 
@@ -30,12 +31,17 @@
   flex-direction: column-reverse;
   justify-content: flex-end;
   gap: var(--space-1);
-  padding: var(--space-6);
+  padding: var(--space-4);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
 
+/* 좁은 화면에서는 단위가 숫자 아래로 내려가도록 줄바꿈을 허용한다 */
 .stats__value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-1);
   color: var(--color-primary);
   font-size: var(--fs-h2);
   font-weight: 700;
@@ -44,7 +50,6 @@
 }
 
 .stats__unit {
-  margin-left: var(--space-1);
   font-size: var(--fs-body);
   font-weight: 600;
 }
@@ -64,10 +69,16 @@
   text-align: right;
 }
 
+@media (min-width: 30em) {
+  .stats__item {
+    padding: var(--space-6);
+  }
+}
+
 /* 데스크톱: 소개 6칸 | 숫자 6칸 */
 @media (min-width: 64em) {
   .about__inner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
     gap: var(--space-12);
   }
