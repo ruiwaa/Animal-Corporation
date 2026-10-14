@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./src/styles/sections/about.css" />
     <link rel="stylesheet" href="./src/styles/sections/principles.css" />
     <link rel="stylesheet" href="./src/styles/sections/services.css" />
+    <link rel="stylesheet" href="./src/styles/sections/animals.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
@@ -215,9 +216,151 @@
         </div>
       </section>
 
-      <section id="animals" class="section" aria-labelledby="animals-title">
+      <section id="animals" class="section animals" aria-labelledby="animals-title">
         <div class="container">
-          <h2 id="animals-title">보호 중인 아이들</h2>
+          <div class="section-header">
+            <p class="eyebrow">새 가족을 기다리는</p>
+            <h2 id="animals-title">보호 중인 아이들</h2>
+          </div>
+          <ul class="animals__list" role="list">
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-senior.webp"
+                  alt="초록 벽 앞에 엎드려 카메라를 바라보는 노란 털의 노령견 보리"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">보리</h3>
+                    <p class="animal__meta">개 · 9살 · 수컷</p>
+                  </div>
+                  <p class="animal__desc">느긋한 성격으로 사람 곁에 기대어 쉬는 걸 좋아해요. 조용한 가정을 기다려요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">중성화 완료</li>
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-poodle.webp"
+                  alt="소파 위에 엎드려 올려다보는 흰 곱슬 털의 푸들 믹스 몽실"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">몽실</h3>
+                    <p class="animal__meta">개 · 7살 · 암컷</p>
+                  </div>
+                  <p class="animal__desc">곱슬곱슬한 털에 겁이 조금 많지만 금방 마음을 열어요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">중성화 완료</li>
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-shepherd.webp"
+                  alt="혀를 내밀고 서 있는 흰 털의 대형견 두부"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">두부</h3>
+                    <p class="animal__meta">개 · 3살 · 수컷</p>
+                  </div>
+                  <p class="animal__desc">산책을 좋아하는 활발한 대형견이에요. 함께 많이 걸어 줄 가족을 기다려요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">중성화 완료</li>
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-tabby.webp"
+                  alt="회색 소파 위에서 몸을 웅크리고 자는 고등어 무늬 고양이 나비"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">나비</h3>
+                    <p class="animal__meta">고양이 · 2살 · 암컷</p>
+                  </div>
+                  <p class="animal__desc">햇볕 드는 자리에서 낮잠 자는 걸 제일 좋아해요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">중성화 완료</li>
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-grey.webp"
+                  alt="창가에 앉아 위를 올려다보는 회색 고양이 구름"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">구름</h3>
+                    <p class="animal__meta">고양이 · 4살 · 수컷</p>
+                  </div>
+                  <p class="animal__desc">처음엔 조심스럽지만 익숙해지면 먼저 다가와 머리를 비벼요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">중성화 완료</li>
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="animal">
+                <img
+                  class="animal__image"
+                  src="./src/assets/images/animal-rabbit.webp"
+                  alt="바구니 안에서 카메라를 바라보는 회색 아기 토끼 솜이"
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                />
+                <div class="animal__body">
+                  <div class="animal__head">
+                    <h3 class="animal__name">솜이</h3>
+                    <p class="animal__meta">토끼 · 1살 · 암컷</p>
+                  </div>
+                  <p class="animal__desc">건초를 좋아하고 조용한 환경에서 편안해해요.</p>
+                  <ul class="badges" role="list" aria-label="건강 상태">
+                    <li class="badge">예방접종 완료</li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
 
