@@ -26,21 +26,31 @@
 
 ### 제출 폴더 구성
 
+제출 파일은 두 가지로 만들 수 있습니다. 두 파일 모두 바깥의 `index.html`을 열면 똑같이 동작합니다.
+
+| 파일 | 내용 | 용도 |
+|---|---|---|
+| `animal-center.zip` | 실행 파일 + 개발용 소스(`source/`) | 기본 제출본 |
+| `animal-center-run.zip` | 실행 파일만 (`.js` 파일 없음) | `.js` 첨부를 막는 메일·전송 경로용. 소스는 아래 저장소에서 볼 수 있습니다 |
+
 ```
 animal-center/
 ├── index.html          # 실행 파일 (빌드 결과: HTML 안에 CSS·JS 포함)
 ├── *.webp              # 사진 7장
 ├── *.woff2             # Pretendard 폰트 4종
 ├── favicon-*.svg       # 파비콘
+├── licenses/           # Pretendard(OFL 1.1), Lucide(ISC) 라이선스
 ├── README.md
-└── source/             # 개발용 소스
+└── source/             # 개발용 소스 (animal-center.zip에만 포함)
     ├── index.html, vite.config.js, package.json, package-lock.json
-    ├── src/            # CSS, JS, 원본 에셋, 폰트·아이콘 라이선스
+    ├── src/            # CSS, JS, 원본 에셋
     ├── docs/           # 디자인 가이드, 체크리스트
-    └── scripts/        # 제출 폴더 생성 스크립트
+    └── scripts/        # 제출 파일 생성 스크립트
 ```
 
 `node_modules/`, `.git/`, 원본 대용량 이미지는 넣지 않았습니다. 이 README에 나오는 `src/...`, `docs/...` 경로는 제출 폴더에서는 `source/` 아래에 있습니다.
+
+**소스 저장소**: https://github.com/ruiwaa/Animal-Corporation (이슈와 PR로 남긴 작업 기록도 볼 수 있습니다)
 
 ### 개발 환경
 
@@ -50,7 +60,8 @@ npm install
 npm run dev      # 개발 서버
 npm run build    # dist/ 에 실행 파일 생성
 npm run preview  # 빌드 결과 미리보기
-npm run package  # 빌드 후 submission/animal-center.zip 생성
+npm run package      # 빌드 후 submission/animal-center.zip 생성 (소스 포함)
+npm run package:run  # 빌드 후 submission/animal-center-run.zip 생성 (실행 파일만)
 ```
 
 ## 페이지 구성
