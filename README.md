@@ -32,7 +32,12 @@ Vite 기본 빌드는 `<script type="module" crossorigin>`을 써서 file://로 
 
 ## 이미지 출처
 
-모든 이미지는 원본을 내려받아 WebP로 변환해 `src/assets/images/`에 포함했습니다. 히어로는 가로 1200px, 보호 동물 사진은 800×800 정사각형으로 잘랐습니다.
+모든 이미지는 원본을 내려받아 WebP로 변환해 `src/assets/images/`에 포함했습니다. 원본 대용량 파일은 제출물에 넣지 않았습니다.
+
+- 변환 방법: Chrome `<canvas>`에 원본을 그린 뒤 `toDataURL('image/webp', 품질)`로 저장 (별도 설치 도구 없이 진행)
+- 히어로: 가로 1200px, 품질 0.8
+- 보호 동물: 동물이 가운데 오도록 800×800 정사각형으로 잘라 품질 0.8. 배경 질감 때문에 용량이 큰 `animal-tabby`, `animal-rabbit`은 품질 0.7
+- 모든 `<img>`에 `width`/`height`를 지정했고, 첫 화면 아래 이미지에는 `loading="lazy"`를 썼습니다. 첫 화면 히어로 이미지는 `fetchpriority="high"`로 먼저 불러옵니다.
 
 | 파일 | 사용 위치 | 원본 | 작가 | 라이선스 |
 |---|---|---|---|---|
