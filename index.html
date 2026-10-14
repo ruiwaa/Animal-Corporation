@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./src/styles/sections/services.css" />
     <link rel="stylesheet" href="./src/styles/sections/animals.css" />
     <link rel="stylesheet" href="./src/styles/sections/process.css" />
+    <link rel="stylesheet" href="./src/styles/sections/support.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
@@ -411,9 +412,72 @@
         </div>
       </section>
 
-      <section id="support" class="section" aria-labelledby="support-title">
+      <section id="support" class="section support" aria-labelledby="support-title">
         <div class="container">
-          <h2 id="support-title">함께하는 방법</h2>
+          <div class="section-header section-header--center">
+            <p class="eyebrow">마음을 보태는</p>
+            <h2 id="support-title">함께하는 방법</h2>
+            <p class="support__lead">입양이 아니어도 괜찮아요. 작은 도움이 모여 아이들의 하루를 지킵니다.</p>
+          </div>
+          <ul class="support__list" role="list">
+            <li>
+              <article class="card way">
+                <span class="icon-circle">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M11 17h3v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a3.16 3.16 0 0 0 2-2h1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1a5 5 0 0 0-2-4V3a4 4 0 0 0-3.2 1.6l-.3.4H11a6 6 0 0 0-6 6v1a5 5 0 0 0 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z" />
+                    <path d="M16 10h.01" />
+                    <path d="M2 8v1a2 2 0 0 0 2 2h1" />
+                  </svg>
+                </span>
+                <h3 class="way__title">정기 후원</h3>
+                <p class="way__desc">매달 정해진 금액으로 보호 동물의 치료비와 사료비를 함께 마련해요.</p>
+                <ul class="way__points">
+                    <li>월 1만 원부터 참여</li>
+                    <li>기부금 영수증 발급</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card way">
+                <span class="icon-circle">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                </span>
+                <h3 class="way__title">봉사 활동</h3>
+                <p class="way__desc">산책, 청소, 목욕처럼 보호 동물의 하루를 함께 돌봐요.</p>
+                <ul class="way__points">
+                    <li>매주 토·일 오전</li>
+                    <li>사전 신청 필수, 만 14세 이상</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="card way">
+                <span class="icon-circle">
+                  <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+                    <path d="M12 22V12" />
+                    <polyline points="3.29 7 12 12 20.71 7" />
+                    <path d="m7.5 4.27 9 5.15" />
+                  </svg>
+                </span>
+                <h3 class="way__title">물품 후원</h3>
+                <p class="way__desc">사료, 배변 패드, 담요처럼 매일 쓰는 물품을 보내 주세요.</p>
+                <ul class="way__points">
+                    <li>개봉하지 않은 사료와 간식</li>
+                    <li>세탁한 담요와 수건</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+          <div class="support__cta">
+            <p>후원과 봉사 신청은 전화나 이메일로 받고 있어요.</p>
+            <a class="button button--secondary" href="#location">후원·봉사 문의하기</a>
+          </div>
         </div>
       </section>
 
