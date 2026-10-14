@@ -28,6 +28,7 @@ Vite 기본 빌드는 `<script type="module" crossorigin>`을 써서 file://로 
 | [Vite](https://vite.dev/) | 8.3.4 | 개발 서버, 빌드 |
 | [vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile) | 2.3.3 | file:// 실행을 위해 JS·CSS를 HTML에 인라인 |
 | [Pretendard](https://github.com/orioncactus/pretendard) | 1.3.9 | 본문 글꼴. KS X 1001 서브셋 woff2를 로컬 파일로 포함. [SIL Open Font License 1.1](src/assets/fonts/Pretendard-LICENSE.txt) |
+| [Lucide](https://lucide.dev/) | lucide-static 1.57.0 | 라인 아이콘. 필요한 SVG만 HTML에 인라인하고 원본은 `src/assets/icons/`에 보관. [ISC License](src/assets/icons/Lucide-LICENSE.txt) |
 
 ## 이미지 출처
 
