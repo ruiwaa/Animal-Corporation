@@ -35,9 +35,9 @@
 }
 
 /*
- * 모바일·태블릿: JS가 없어도 메뉴를 쓸 수 있도록 로고 아래에 펼쳐 둔다.
- * 토글 버튼으로 접는 동작은 #11에서 추가한다.
+ * 모바일·태블릿 기본(JS 없음): 메뉴를 로고 아래에 펼쳐 둔다.
  * 이 상태의 헤더는 높이가 64px보다 커서 sticky로 두면 본문을 가리므로 고정하지 않는다.
+ * JS가 토글 버튼을 보이게 하면 아래 "모바일 메뉴 토글" 규칙이 적용된다.
  */
 .site-nav {
   flex-basis: 100%;
@@ -68,6 +68,78 @@
   display: none;
 }
 
+/* 모바일 메뉴 토글 버튼 (JS가 hidden을 해제해야 보인다) */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-right: calc(-1 * var(--space-3));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.nav-toggle[hidden] {
+  display: none;
+}
+
+.nav-toggle__icon--close,
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon--open {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon--close {
+  display: block;
+}
+
+/*
+ * 모바일·태블릿 + JS 사용 가능(토글 버튼이 보임):
+ * 헤더를 한 줄 64px로 고정하고, 메뉴는 헤더 아래에 겹쳐 펼친다.
+ * 열고 닫는 상태는 버튼의 aria-expanded만 기준으로 삼는다.
+ */
+@media (width < 64em) {
+  .site-header:has(.nav-toggle:not([hidden])) {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* 본문 위, 건너뛰기 링크(100) 아래 */
+    height: var(--header-height);
+  }
+
+  .site-header:has(.nav-toggle:not([hidden])) .site-header__inner {
+    flex-wrap: nowrap;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .nav-toggle:not([hidden]) + .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: var(--space-2) var(--gutter) var(--space-4);
+    border-bottom: 1px solid var(--color-surface-soft);
+    background-color: var(--color-bg);
+  }
+
+  .nav-toggle:not([hidden])[aria-expanded="false"] + .site-nav {
+    display: none;
+  }
+
+  .nav-toggle:not([hidden]) + .site-nav .site-nav__list {
+    flex-direction: column;
+  }
+
+  .nav-toggle:not([hidden]) + .site-nav .site-nav__link {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
 /* 데스크톱: 한 줄 64px sticky 헤더 */
 @media (min-width: 64em) {
   /* 테두리를 포함한 전체 높이를 --header-height에 맞춰야 scroll-padding-top과 어긋나지 않는다 */
@@ -95,5 +167,9 @@
 
   .site-header__cta {
     display: inline-flex;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
