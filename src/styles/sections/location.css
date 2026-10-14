@@ -1,0 +1,148 @@
+/* 오시는 길 */
+
+.location {
+  background-color: var(--color-bg);
+}
+
+.location__inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.location__address {
+  font-style: normal;
+}
+
+.info-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.location__address + .info-list {
+  margin-top: var(--space-4);
+}
+
+.info-item__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.info-item__label .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+/* 아이콘 폭(20px) + 간격만큼 들여 항목명과 글자 시작선을 맞춘다 */
+.info-item__value {
+  margin-top: var(--space-1);
+  padding-left: calc(20px + var(--space-2));
+  color: var(--color-text-sub);
+}
+
+/* 약도: 색은 토큰을 따라 라이트·다크 모드에서 함께 바뀐다 */
+.map {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.map__ground {
+  fill: var(--color-surface-soft);
+}
+
+.map__park {
+  fill: var(--color-primary);
+  opacity: 0.25;
+}
+
+.map__river {
+  fill: none;
+  stroke: var(--color-surface);
+  stroke-width: 22;
+  stroke-linecap: round;
+}
+
+.map__road {
+  fill: none;
+  stroke: var(--color-surface);
+  stroke-width: 28;
+}
+
+.map__road--minor {
+  stroke-width: 14;
+}
+
+.map__block {
+  fill: var(--color-bg);
+}
+
+.map__route {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-dasharray: 10 8;
+  stroke-linecap: round;
+}
+
+.map__station {
+  fill: var(--color-text-sub);
+}
+
+.map__pin {
+  fill: var(--color-primary);
+}
+
+.map__pin-dot {
+  fill: var(--color-on-primary);
+}
+
+.map__tag {
+  fill: var(--color-surface);
+  stroke: var(--color-primary);
+  stroke-width: 2;
+}
+
+/* SVG가 화면 폭에 맞춰 줄어들어 360px에서 약 0.46배가 되므로 라벨을 크게 둔다 */
+.map__label {
+  fill: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.map__label--station {
+  fill: var(--color-surface);
+}
+
+.map__label--tag {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.location__caption {
+  margin-top: var(--space-3);
+  color: var(--color-text-sub);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* 데스크톱: 정보 5칸 | 약도 7칸 */
+@media (min-width: 64em) {
+  .location__inner {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .location__info {
+    grid-column: 1 / span 5;
+  }
+
+  .location__map {
+    grid-column: 6 / span 7;
+  }
+}

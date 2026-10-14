@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./src/styles/sections/animals.css" />
     <link rel="stylesheet" href="./src/styles/sections/process.css" />
     <link rel="stylesheet" href="./src/styles/sections/support.css" />
+    <link rel="stylesheet" href="./src/styles/sections/location.css" />
+    <link rel="stylesheet" href="./src/styles/sections/footer.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
@@ -481,11 +483,118 @@
         </div>
       </section>
 
-      <section id="location" class="section" aria-labelledby="location-title">
-        <div class="container">
-          <h2 id="location-title">오시는 길</h2>
+      <section id="location" class="section location" aria-labelledby="location-title">
+        <div class="location__inner container">
+          <div class="location__info">
+            <div class="section-header">
+              <p class="eyebrow">방문 안내</p>
+              <h2 id="location-title">오시는 길</h2>
+            </div>
+            <address class="location__address">
+              <dl class="info-list">
+                <div class="info-item">
+                  <dt class="info-item__label">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    주소
+                  </dt>
+                  <dd class="info-item__value">숲결시 솔바람로 12, 숲결 동물보호센터</dd>
+                </div>
+                <div class="info-item">
+                  <dt class="info-item__label">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                    </svg>
+                    전화
+                  </dt>
+                  <dd class="info-item__value"><a href="tel:000-0000-0000">000-0000-0000</a></dd>
+                </div>
+                <div class="info-item">
+                  <dt class="info-item__label">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                    </svg>
+                    이메일
+                  </dt>
+                  <dd class="info-item__value"><a href="mailto:contact@example.com">contact@example.com</a></dd>
+                </div>
+              </dl>
+            </address>
+            <dl class="info-list">
+                <div class="info-item">
+                  <dt class="info-item__label">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    운영 시간
+                  </dt>
+                  <dd class="info-item__value">화–일 <time datetime="10:00">10:00</time>–<time datetime="17:00">17:00</time><br />월요일·공휴일 휴무, 입양 상담은 예약제</dd>
+                </div>
+                <div class="info-item">
+                  <dt class="info-item__label">
+                    <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M8 6v6" />
+                      <path d="M15 6v6" />
+                      <path d="M2 12h19.6" />
+                      <path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3" />
+                      <circle cx="7" cy="18" r="2" />
+                      <path d="M9 18h5" />
+                      <circle cx="16" cy="18" r="2" />
+                    </svg>
+                    대중교통
+                  </dt>
+                  <dd class="info-item__value">숲결역 2번 출구에서 걸어서 10분<br />센터 앞 주차 5대 가능</dd>
+                </div>
+            </dl>
+          </div>
+
+          <figure class="location__map">
+            <svg class="map" viewBox="0 0 700 480" role="img" aria-labelledby="map-title map-desc">
+              <title id="map-title">숲결 동물보호센터 약도</title>
+              <desc id="map-desc">센터는 솔바람로와 숲결천 사이, 숲결공원 북쪽에 있습니다. 숲결역 2번 출구에서 솔바람로를 따라 동쪽으로 걸어오면 됩니다.</desc>
+              <rect class="map__ground" width="700" height="480" />
+              <path class="map__park" d="M380 300h250a20 20 0 0 1 20 20v120a20 20 0 0 1-20 20H380a20 20 0 0 1-20-20V320a20 20 0 0 1 20-20Z" />
+              <path class="map__river" d="M-10 400C120 360 200 440 330 410S540 330 710 360" />
+              <path class="map__road" d="M0 210H700" />
+              <path class="map__road" d="M240 0V480" />
+              <path class="map__road map__road--minor" d="M520 0V210" />
+              <rect class="map__block" x="40" y="40" width="160" height="130" rx="10" />
+              <rect class="map__block" x="280" y="40" width="200" height="130" rx="10" />
+              <rect class="map__block" x="560" y="40" width="110" height="130" rx="10" />
+              <rect class="map__block" x="40" y="250" width="160" height="100" rx="10" />
+              <path class="map__route" d="M130 210H440V250" />
+              <rect class="map__station" x="80" y="182" width="100" height="56" rx="12" />
+              <text class="map__label map__label--station" x="130" y="219" text-anchor="middle">숲결역</text>
+              <text class="map__label" x="560" y="400" text-anchor="middle">숲결공원</text>
+              <text class="map__label" x="80" y="455">숲결천</text>
+              <text class="map__label" x="680" y="194" text-anchor="end">솔바람로</text>
+              <path class="map__pin" d="M440 222c-15 0-27 12-27 27 0 20 27 45 27 45s27-25 27-45c0-15-12-27-27-27Z" transform="translate(0 -10)" />
+              <circle class="map__pin-dot" cx="440" cy="239" r="9" />
+              <rect class="map__tag" x="340" y="292" width="200" height="44" rx="22" />
+              <text class="map__label map__label--tag" x="440" y="321" text-anchor="middle">숲결 동물보호센터</text>
+            </svg>
+            <figcaption class="location__caption">숲결역 2번 출구에서 솔바람로를 따라 걸어서 10분</figcaption>
+          </figure>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <div>
+          <p class="site-footer__name">숲결 동물보호센터</p>
+          <p class="site-footer__tagline">다시 가족을 만날 때까지, 곁에 있을게요.</p>
+        </div>
+        <p class="site-footer__contact">
+          숲결시 솔바람로 12<br />
+          전화 <a href="tel:000-0000-0000">000-0000-0000</a> · 이메일 <a href="mailto:contact@example.com">contact@example.com</a>
+        </p>
+        <p class="site-footer__copy"><small>© 2026 숲결 동물보호센터. 과제용으로 만든 가상 단체의 소개 페이지입니다.</small></p>
+      </div>
+    </footer>
   </body>
 </html>
