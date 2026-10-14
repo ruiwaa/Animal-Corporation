@@ -30,7 +30,21 @@
           숲결 동물보호센터<span class="visually-hidden"> 홈</span>
         </a>
 
-        <nav class="site-nav" aria-label="주요 메뉴">
+        <!-- JS가 버튼을 보이게 하기 전까지는 숨겨 두고, 메뉴는 펼친 상태로 노출한다 -->
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+          <svg class="icon nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 5h16" />
+            <path d="M4 12h16" />
+            <path d="M4 19h16" />
+          </svg>
+          <svg class="icon nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+          <span class="nav-toggle__label visually-hidden">메뉴 열기</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
           <ul class="site-nav__list" role="list">
             <li><a class="site-nav__link" href="#about">소개</a></li>
             <li><a class="site-nav__link" href="#services">서비스</a></li>
