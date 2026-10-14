@@ -6,17 +6,83 @@
     <title>숲결 동물보호센터</title>
     <link rel="stylesheet" href="./src/styles/tokens.css" />
     <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/styles/sections/header.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문 바로가기</a>
-    <main id="main" class="container">
-      <h1>숲결 동물보호센터</h1>
-      <p>버려지고 길을 잃은 동물들이 다시 가족을 만날 때까지 머무는 곳입니다. 숲의 바람처럼 조용하고 따뜻하게 곁을 지킵니다.</p>
-      <h2>함께하는 방법</h2>
-      <h3>정기 후원</h3>
-      <p><small>배지·캡션 크기</small></p>
-      <p><a href="#main">본문 링크</a></p>
+
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="#top">
+          <svg class="site-header__logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2C7 6 4.5 9.7 4.5 13.2a7.5 7.5 0 0 0 6.75 7.46V22h1.5v-1.34a7.5 7.5 0 0 0 6.75-7.46C19.5 9.7 17 6 12 2Zm.75 16.97V15.5l3.03-3.03-1.06-1.06-1.97 1.97V9h-1.5v5.38l-1.97-1.97-1.06 1.06 3.03 3.03v3.47a6 6 0 0 1-5.25-5.77c0-2.7 1.88-5.67 6-9.24 4.12 3.57 6 6.54 6 9.24a6 6 0 0 1-5.25 5.77Z" />
+          </svg>
+          숲결 동물보호센터<span class="visually-hidden"> 홈</span>
+        </a>
+
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <ul class="site-nav__list" role="list">
+            <li><a class="site-nav__link" href="#about">소개</a></li>
+            <li><a class="site-nav__link" href="#services">서비스</a></li>
+            <li><a class="site-nav__link" href="#animals">보호동물</a></li>
+            <li><a class="site-nav__link" href="#process">입양절차</a></li>
+            <li><a class="site-nav__link" href="#support">함께하기</a></li>
+          </ul>
+        </nav>
+
+        <a class="button button--primary site-header__cta" href="#location">입양 문의</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <h1 id="hero-title">숲결 동물보호센터</h1>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title">센터 소개</h2>
+        </div>
+      </section>
+
+      <section id="principles" class="section" aria-labelledby="principles-title">
+        <div class="container">
+          <h2 id="principles-title">운영 원칙</h2>
+        </div>
+      </section>
+
+      <section id="services" class="section" aria-labelledby="services-title">
+        <div class="container">
+          <h2 id="services-title">제공 서비스</h2>
+        </div>
+      </section>
+
+      <section id="animals" class="section" aria-labelledby="animals-title">
+        <div class="container">
+          <h2 id="animals-title">보호 중인 아이들</h2>
+        </div>
+      </section>
+
+      <section id="process" class="section" aria-labelledby="process-title">
+        <div class="container">
+          <h2 id="process-title">입양 절차</h2>
+        </div>
+      </section>
+
+      <section id="support" class="section" aria-labelledby="support-title">
+        <div class="container">
+          <h2 id="support-title">함께하는 방법</h2>
+        </div>
+      </section>
+
+      <section id="location" class="section" aria-labelledby="location-title">
+        <div class="container">
+          <h2 id="location-title">오시는 길</h2>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -143,6 +143,57 @@ a:hover {
   margin-inline: auto;
 }
 
+.section {
+  padding-block: var(--space-section);
+}
+
+/* 버튼 */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-on-primary);
+}
+
+.button--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-secondary-hover);
+  color: var(--color-on-secondary);
+}
+
+.button--ghost {
+  border-color: var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.button--ghost:hover {
+  border-color: var(--color-primary-hover);
+  color: var(--color-primary-hover);
+}
+
 /* 접근성 유틸리티 */
 .skip-link {
   position: absolute;
@@ -187,5 +238,12 @@ a:hover {
 
   .skip-link {
     transition: transform var(--duration) var(--easing);
+  }
+
+  .button {
+    transition:
+      background-color var(--duration) var(--easing),
+      border-color var(--duration) var(--easing),
+      color var(--duration) var(--easing);
   }
 }
