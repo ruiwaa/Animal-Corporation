@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/styles/base.css" />
     <link rel="stylesheet" href="./src/styles/sections/header.css" />
     <link rel="stylesheet" href="./src/styles/sections/hero.css" />
+    <link rel="stylesheet" href="./src/styles/sections/about.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
@@ -59,9 +60,36 @@
         </div>
       </section>
 
-      <section id="about" class="section" aria-labelledby="about-title">
-        <div class="container">
-          <h2 id="about-title">센터 소개</h2>
+      <section id="about" class="section about" aria-labelledby="about-title">
+        <div class="about__inner container">
+          <div class="about__content">
+            <p class="eyebrow">센터 소개</p>
+            <h2 id="about-title" class="about__title">잠시 머무는 쉼터, 새로운 시작</h2>
+            <p class="about__desc">숲결은 2016년 작은 임시 보호소로 시작했습니다. 구조된 동물이 치료와 회복을 거쳐 사람과 다시 마음을 나눌 수 있을 때까지, 서두르지 않고 한 마리씩 곁을 지킵니다.</p>
+            <p class="about__desc">보호 기간에 제한을 두지 않고, 모든 입양은 상담과 방문을 거쳐 신중하게 연결합니다.</p>
+          </div>
+
+          <div class="about__stats-wrap">
+            <dl class="stats">
+              <div class="stats__item">
+                <dt class="stats__label">누적 구조</dt>
+                <dd class="stats__value">1,240<span class="stats__unit">마리</span></dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">입양 완료</dt>
+                <dd class="stats__value">980<span class="stats__unit">마리</span></dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">현재 보호 중</dt>
+                <dd class="stats__value">86<span class="stats__unit">마리</span></dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">활동 봉사자</dt>
+                <dd class="stats__value">320<span class="stats__unit">명</span></dd>
+              </div>
+            </dl>
+            <p class="stats__note">2026년 9월 기준</p>
+          </div>
         </div>
       </section>
 

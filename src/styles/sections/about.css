@@ -1,0 +1,74 @@
+/* 센터 소개와 숫자 */
+
+.about {
+  background-color: var(--color-surface);
+}
+
+.about__inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.about__title {
+  margin-top: var(--space-3);
+}
+
+.about__desc {
+  margin-top: var(--space-4);
+  color: var(--color-text-sub);
+}
+
+/* 숫자 2×2. 읽는 순서는 항목명 → 숫자(dt → dd), 화면에서는 숫자를 위에 둔다 */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+.stats__value {
+  color: var(--color-primary);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: var(--lh-h2);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats__unit {
+  margin-left: var(--space-1);
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+
+.stats__label {
+  color: var(--color-text-sub);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: var(--lh-small);
+}
+
+.stats__note {
+  margin-top: var(--space-3);
+  color: var(--color-text-sub);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  text-align: right;
+}
+
+/* 데스크톱: 소개 6칸 | 숫자 6칸 */
+@media (min-width: 64em) {
+  .about__inner {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: var(--space-12);
+  }
+}
