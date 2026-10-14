@@ -1,0 +1,49 @@
+/* 함께하는 방법: 화면에서 세컨더리 배경을 쓰는 유일한 섹션 */
+
+.support {
+  background-color: var(--color-secondary-soft);
+}
+
+.support__lead {
+  color: var(--color-text-sub);
+}
+
+/* 모바일 1열 → 데스크톱 3열 */
+.support__list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.way__title {
+  margin-top: var(--space-4);
+}
+
+.way__desc {
+  margin-top: var(--space-2);
+  color: var(--color-text-sub);
+}
+
+.way__points {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.way__points li::marker {
+  color: var(--color-primary);
+}
+
+.support__cta {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .support__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
