@@ -32,8 +32,14 @@ Vite 기본 빌드는 `<script type="module" crossorigin>`을 써서 file://로 
 
 ## 이미지 출처
 
-모든 이미지는 원본을 내려받아 가로 1200px WebP로 변환해 `src/assets/images/`에 포함했습니다.
+모든 이미지는 원본을 내려받아 WebP로 변환해 `src/assets/images/`에 포함했습니다. 히어로는 가로 1200px, 보호 동물 사진은 800×800 정사각형으로 잘랐습니다.
 
 | 파일 | 사용 위치 | 원본 | 작가 | 라이선스 |
 |---|---|---|---|---|
 | `hero-dog.webp` | 히어로 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Earnest_dog_in_the_grass_(Unsplash).jpg) (원출처 [Unsplash](https://unsplash.com/photos/-KppBfOlugc)) | Rodion Kutsaev | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-senior.webp` | 보호 동물 카드 (보리) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dog_for_Senior_Dog_Food_Diet_Wikipedia_Page.jpg) (원출처 [Pixabay](https://pixabay.com/photos/dog-hybrid-senior-domestic-dog-2231453/)) | Leo_65 | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-poodle.webp` | 보호 동물 카드 (몽실) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cute_Senior_Small_Poodle_Mix.jpg) | Twawri | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-shepherd.webp` | 보호 동물 카드 (두부) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:White_Swiss_Shepherd_Dog.jpg) | Avietar | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-tabby.webp` | 보호 동물 카드 (나비) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sleepy_European_tabby_cat.jpg) | Gugalcrom123 | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-grey.webp` | 보호 동물 카드 (구름) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Grey_cat_looking_up_at_camera.jpg) | Aleenamustlive | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `animal-rabbit.webp` | 보호 동물 카드 (솜이) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bunny_in_a_basket.jpg) | Catlover1133 | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
