@@ -1,0 +1,32 @@
+/* 운영 원칙 */
+
+.principles {
+  background-color: var(--color-surface-soft);
+}
+
+.principles__list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.principle {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.principle__title {
+  margin-top: var(--space-4);
+}
+
+.principle__desc {
+  margin-top: var(--space-2);
+  color: var(--color-text-sub);
+}
+
+/* 태블릿 이상: 3열 */
+@media (min-width: 48em) {
+  .principles__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

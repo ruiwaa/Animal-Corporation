@@ -155,6 +155,48 @@ a:hover {
   line-height: var(--lh-small);
 }
 
+/* 섹션 머리: 라벨 + h2 */
+.section-header {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.section-header--center {
+  justify-items: center;
+  text-align: center;
+}
+
+/* 카드 */
+.card {
+  height: 100%;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.card-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+/* 아이콘 */
+.icon {
+  flex-shrink: 0;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-soft);
+  color: var(--color-primary);
+}
+
 /* 버튼 */
 .button {
   display: inline-flex;
