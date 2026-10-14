@@ -1,0 +1,77 @@
+/* 보호 동물 카드 */
+
+.animals {
+  background-color: var(--color-surface);
+}
+
+/* 1열(모바일) → 2열(30em, 480px~) → 3열(64em) */
+.animals__list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* surface 섹션 위 카드라 배경을 bg로 두어 그림자·테두리 없이 구분한다 */
+.animal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+/* 360px 1열에서는 세로로 길어지지 않도록 4:3, 2열부터 1:1 */
+.animal__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.animal__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.animal__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: var(--space-3);
+}
+
+.animal__meta {
+  color: var(--color-text-sub);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: var(--lh-small);
+}
+
+.animal__desc {
+  color: var(--color-text-sub);
+}
+
+/* 배지는 카드 아래쪽에 맞춘다 */
+.animal .badges {
+  margin-top: auto;
+  padding-top: var(--space-1);
+}
+
+@media (min-width: 30em) {
+  .animals__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .animal__image {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (min-width: 64em) {
+  .animals__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
