@@ -1,0 +1,59 @@
+/* 히어로 */
+
+.hero {
+  padding-block: var(--space-8) var(--space-section);
+  background-color: var(--color-bg);
+}
+
+/* 모바일: 사진 → 텍스트 → 버튼. 사진은 포커스 대상이 아니라 순서를 바꿔도 Tab 순서에 영향이 없다 */
+.hero__inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.hero__image {
+  order: -1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.hero__title {
+  margin-top: var(--space-3);
+}
+
+.hero__desc {
+  margin-top: var(--space-4);
+  color: var(--color-text-sub);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* 데스크톱: 텍스트 5칸 | 사진 7칸 */
+@media (min-width: 64em) {
+  .hero {
+    padding-block: var(--space-12) var(--space-section);
+  }
+
+  .hero__inner {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .hero__content {
+    grid-column: 1 / span 5;
+  }
+
+  .hero__image {
+    order: 0;
+    grid-column: 6 / span 7;
+    aspect-ratio: auto;
+  }
+}

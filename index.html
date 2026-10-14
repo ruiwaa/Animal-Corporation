@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/styles/tokens.css" />
     <link rel="stylesheet" href="./src/styles/base.css" />
     <link rel="stylesheet" href="./src/styles/sections/header.css" />
+    <link rel="stylesheet" href="./src/styles/sections/hero.css" />
     <script type="module" src="./src/scripts/main.js"></script>
   </head>
   <body>
@@ -37,8 +38,24 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="container">
-          <h1 id="hero-title">숲결 동물보호센터</h1>
+        <div class="hero__inner container">
+          <div class="hero__content">
+            <p class="eyebrow">안락사 없는 보호센터</p>
+            <h1 id="hero-title" class="hero__title">다시 가족을 만날 때까지, 숲결이 곁에 있을게요</h1>
+            <p class="hero__desc">숲결 동물보호센터는 구조된 동물이 건강을 되찾고 새 가족을 만날 때까지 돌보는 민간 보호센터입니다.</p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#location">입양 문의하기</a>
+              <a class="button button--secondary" href="#support">후원하기</a>
+            </div>
+          </div>
+          <img
+            class="hero__image"
+            src="./src/assets/images/hero-dog.webp"
+            alt="풀숲에 엎드려 정면을 바라보는 갈색 믹스견"
+            width="1200"
+            height="800"
+            fetchpriority="high"
+          />
         </div>
       </section>
 
