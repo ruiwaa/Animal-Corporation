@@ -1,0 +1,3 @@
+body[data-js='on'] h1 { color: #2F6B4F; }
+.bg-check { padding-left: 32px; background: url('../assets/icons/paw.svg') no-repeat left center / 24px; }
+.bg-photo { width: 200px; height: 150px; background: url('../assets/images/test.webp') center / cover; }
