@@ -13,17 +13,17 @@ Vite 기본 빌드 결과에는 두 가지 문제가 있습니다.
 
 ## 1. 초기 설정 확인 (이슈 #1)
 
-- [ ] `vite.config.js`에 `base: './'` 설정
+- [x] `vite.config.js`에 `base: './'` 설정
   ```js
   import { defineConfig } from 'vite';
   export default defineConfig({
     base: './',
   });
   ```
-- [ ] `index.html`의 모든 경로가 상대경로 (`./src/...`)
-- [ ] CSS의 `url()`도 상대경로
-- [ ] 빈 페이지에 CSS 한 줄, JS 한 줄(`document.body.dataset.js = 'on'`), 이미지 하나를 넣고 아래 2번 테스트를 실행
-- [ ] **file://에서 JS가 막히면 제출 방식을 결정하고 README와 이 문서에 기록**
+- [x] `index.html`의 모든 경로가 상대경로 (`./src/...`)
+- [x] CSS의 `url()`도 상대경로
+- [x] 빈 페이지에 CSS 한 줄, JS 한 줄(`document.body.dataset.js = 'on'`), 이미지 하나를 넣고 아래 2번 테스트를 실행
+- [x] **file://에서 JS가 막히면 제출 방식을 결정하고 README와 이 문서에 기록** → 아래 "결정" 참고
 
 ### file://에서 JS가 실행되지 않을 때 선택지
 
@@ -33,6 +33,27 @@ Vite 기본 빌드 결과에는 두 가지 문제가 있습니다.
 | B. Vite는 개발 서버로만 사용 | 소스를 클래식 스크립트(`<script src="./js/main.js" defer>`)로 작성하고, 소스 폴더 자체를 제출 | 빌드 결과와 소스가 같아서 단순함. 추가 의존성 없음 | 번들링, 해시 파일명, 최적화 이점이 없음. JS 파일 간 `import` 불가 |
 
 > 어느 쪽이든 **실제로 file://에서 열어 확인한 결과**를 근거로 결정합니다. 플러그인 옵션은 도입 시점에 공식 문서로 확인합니다.
+
+### 결정: A. 단일 파일 빌드 (이슈 #1, 2026-10-14)
+
+**테스트 결과** (Chrome 헤드리스, Firefox 헤드리스, file://)
+
+| 대상 | 결과 |
+|---|---|
+| 기본 빌드 `dist/index.html` | JS **와 CSS 모두** CORS로 차단. `<link>`에도 `crossorigin`이 붙기 때문 |
+| 소스 `index.html` | `type="module"` JS 차단 |
+| A안 빌드 `dist/index.html` | JS·CSS·`<img>`·CSS `url()` 이미지 모두 정상, 콘솔 에러 0개. 다른 경로로 복사해도 정상 |
+
+**설정** (`vite.config.js`)
+
+- `viteSingleFile({ useRecommendedBuildConfig: false })`: 권장 설정은 `assetsInlineLimit`을 무제한으로 바꿔 모든 이미지를 base64로 넣기 때문에 끕니다. 이미지는 Vite 기본값(4KB 미만만 인라인)을 따릅니다.
+- `build.cssCodeSplit: false`: CSS를 하나로 모아야 플러그인이 인라인합니다.
+- `build.assetsDir: ''`: CSS의 `url()`은 CSS 파일 위치(`assets/`) 기준 상대경로로 만들어집니다. CSS가 `index.html` 안으로 인라인되면 기준이 `dist/` 루트로 바뀌어 `./assets/` 아래 이미지를 찾지 못합니다. 에셋도 루트에 두어 두 기준을 맞춥니다.
+
+**제출 시 주의**
+
+- 채점자가 여는 `index.html`은 **빌드 결과물**이어야 합니다. 소스 `index.html`은 file://에서 JS가 막힙니다.
+- 제출 폴더 구성안: 루트에 `dist/` 내용(빌드된 `index.html`과 이미지), `source/`에 프로젝트 소스. 최종 구성은 이슈 #14에서 확정합니다.
 
 ## 2. 실행 테스트 매트릭스
 
