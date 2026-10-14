@@ -9,7 +9,7 @@
 
 | 항목 | 내용 |
 |---|---|
-| 실행 | 압축을 풀고 `index.html`을 더블클릭. **서버나 인터넷 연결 없이 file://에서 동작** |
+| 실행 | 압축을 풀고 `animal-center/index.html`을 더블클릭. **서버나 인터넷 연결 없이 file://에서 동작** |
 | 기술 | HTML, CSS, Vanilla JS, Vite (프레임워크 없음) |
 | 반응형 | 모바일 우선, `em` 단위 브레이크포인트 3개, 320px(200% 확대)까지 가로 스크롤 없음 |
 | 접근성 | Lighthouse 접근성 **100점**(모바일·데스크톱), 전 색 조합 WCAG AA 대비 계산, 키보드만으로 모든 기능 사용 가능 |
@@ -20,15 +20,37 @@
 
 ### 바로 보기
 
-`index.html`을 브라우저로 엽니다. 폰트, 아이콘, 이미지를 모두 파일로 포함했기 때문에 오프라인에서도 똑같이 보입니다.
+제출 폴더(`animal-center/`) 바로 아래의 **`index.html`을 브라우저로 엽니다.** 폰트, 아이콘, 이미지를 모두 파일로 포함했기 때문에 서버나 인터넷 연결 없이도 똑같이 보입니다.
+
+> `source/index.html`은 개발용 파일이라 직접 열면 스크립트가 동작하지 않습니다. 실행은 바깥의 `index.html`로 해 주세요.
+
+### 제출 폴더 구성
+
+```
+animal-center/
+├── index.html          # 실행 파일 (빌드 결과: HTML 안에 CSS·JS 포함)
+├── *.webp              # 사진 7장
+├── *.woff2             # Pretendard 폰트 4종
+├── favicon-*.svg       # 파비콘
+├── README.md
+└── source/             # 개발용 소스
+    ├── index.html, vite.config.js, package.json, package-lock.json
+    ├── src/            # CSS, JS, 원본 에셋, 폰트·아이콘 라이선스
+    ├── docs/           # 디자인 가이드, 체크리스트
+    └── scripts/        # 제출 폴더 생성 스크립트
+```
+
+`node_modules/`, `.git/`, 원본 대용량 이미지는 넣지 않았습니다. 이 README에 나오는 `src/...`, `docs/...` 경로는 제출 폴더에서는 `source/` 아래에 있습니다.
 
 ### 개발 환경
 
 ```bash
+cd source
 npm install
 npm run dev      # 개발 서버
-npm run build    # dist/ 에 제출용 파일 생성
+npm run build    # dist/ 에 실행 파일 생성
 npm run preview  # 빌드 결과 미리보기
+npm run package  # 빌드 후 submission/animal-center.zip 생성
 ```
 
 ## 페이지 구성
@@ -193,9 +215,10 @@ JS는 기능을 더하는 용도로만 씁니다.
 
 테스트 기록은 `docs/04-build-checklist.md`에 있습니다.
 
-## 폴더 구조
+## 소스 폴더 구조
 
 ```
+source/
 ├── index.html              # 개발용 진입 파일 (빌드하면 dist/index.html 생성)
 ├── vite.config.js          # 상대경로 base, 단일 파일 빌드 설정
 ├── package.json
@@ -211,7 +234,8 @@ JS는 기능을 더하는 용도로만 씁니다.
 │       ├── images/         # WebP 사진 7장
 │       ├── icons/          # Lucide 원본 SVG, 파비콘, 라이선스
 │       └── fonts/          # Pretendard woff2 4종, 라이선스
-└── docs/                   # 디자인 가이드, 빌드·접근성 체크리스트, 작업 흐름
+├── docs/                   # 디자인 가이드, 빌드·접근성 체크리스트, 작업 흐름
+└── scripts/package.sh      # 제출 폴더·ZIP 생성
 ```
 
 ## 사용한 라이브러리와 도구
