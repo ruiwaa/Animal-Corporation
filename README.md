@@ -31,4 +31,8 @@ Vite 기본 빌드는 `<script type="module" crossorigin>`을 써서 file://로 
 
 ## 이미지 출처
 
-추후 기록 예정입니다.
+모든 이미지는 원본을 내려받아 가로 1200px WebP로 변환해 `src/assets/images/`에 포함했습니다.
+
+| 파일 | 사용 위치 | 원본 | 작가 | 라이선스 |
+|---|---|---|---|---|
+| `hero-dog.webp` | 히어로 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Earnest_dog_in_the_grass_(Unsplash).jpg) (원출처 [Unsplash](https://unsplash.com/photos/-KppBfOlugc)) | Rodion Kutsaev | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
