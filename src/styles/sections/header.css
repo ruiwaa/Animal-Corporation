@@ -50,9 +50,12 @@
   column-gap: var(--space-4);
 }
 
+/* 터치 대상 최소 44×44px ("소개"처럼 짧은 메뉴도 폭을 확보한다) */
 .site-nav__link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
   min-height: 44px;
   color: var(--color-text);
   font-weight: 500;
@@ -135,6 +138,7 @@
   }
 
   .nav-toggle:not([hidden]) + .site-nav .site-nav__link {
+    justify-content: flex-start;
     width: 100%;
     min-height: 48px;
   }
