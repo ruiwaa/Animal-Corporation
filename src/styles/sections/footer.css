@@ -1,0 +1,44 @@
+/* 푸터 */
+
+.site-footer {
+  padding-block: var(--space-12);
+  background-color: var(--color-surface-soft);
+  color: var(--color-text-sub);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.site-footer__name {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.site-footer__tagline {
+  margin-top: var(--space-1);
+}
+
+/* 구분선이 전체 폭으로 이어지도록 본문 문단의 68ch 제한을 푼다 */
+.site-footer__copy {
+  max-inline-size: none;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+/* 데스크톱: 센터명 | 연락처, 저작권은 아래 한 줄 */
+@media (min-width: 64em) {
+  .site-footer__inner {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .site-footer__contact {
+    text-align: right;
+  }
+
+  .site-footer__copy {
+    grid-column: 1 / -1;
+  }
+}
